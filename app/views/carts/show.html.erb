@@ -1,5 +1,5 @@
 <section class="cart-show">
-
+<%if cart.size > 0%>
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
@@ -48,5 +48,8 @@
       <% end %>
     </div>
   </div>
-
+<% elsif cart.size == 0 %>
+  <h1 class="alert alert-warning" role="alert" >Your cart is empty! Please add items to your cart.<h1>
+  <a class="navbar-brand" href="/">Back to Shopping </a>
+<% end %>
 </section>
