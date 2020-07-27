@@ -2,6 +2,10 @@
 
 
   <%= form_tag '/login' do %>
+    
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
 
     Email: <%= text_field_tag :email %>
     Password: <%= password_field_tag :password %>

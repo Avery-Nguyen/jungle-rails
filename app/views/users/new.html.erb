@@ -3,6 +3,17 @@
   <div class="col-sm-6 col-sm-offset-1">
     
     <%= form_for :user, url: '/users' do |f| %>
+      <% if @user.errors.any? %>
+        <div class="alert alert-danger">
+            <strong>The following errors prevented saving:</strong>
+            <ul>
+              <% @user.errors.full_messages.each do |error| %>
+                <li><%= error %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+   
     <div class="form-group">
       First Name: <%= f.text_field :first_name %>
      </div>
