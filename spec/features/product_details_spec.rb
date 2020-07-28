@@ -23,7 +23,6 @@ RSpec.feature "ProductDetails", type: :feature, js: true do
  
     page.find('a.btn-default', match: :first).click
    
-    puts page.html
 
     # DEBUG / VERIFY
     
